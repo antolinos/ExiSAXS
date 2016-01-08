@@ -9,7 +9,7 @@ function AuthenticationManager(){
  * @param password
  * @param url
  */
-AuthenticationManager.prototype.login = function(user, password, url){
+AuthenticationManager.prototype.login = function(user, password, url, site){
 	var _this = this;
 	var fn = function onSuccess(sender, data) {
 		_this.onSuccess.notify({
@@ -28,7 +28,7 @@ AuthenticationManager.prototype.login = function(user, password, url){
 	EXI.getDataAdapter({
 		onSuccess :fn,
 		onError :err
-	}).proposal.authentication.authenticate(user, password, url);
+	}).proposal.authentication.authenticate(user, password, url, site);
 	
 	
 	

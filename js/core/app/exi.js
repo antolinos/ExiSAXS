@@ -82,8 +82,7 @@ function Exi(args) {
 			_this.getDataAdapter().exi.offline.authenticate();
 			
 		});
-		
-		authenticationManager.login(args.user, args.password, args.site);
+		authenticationManager.login(args.user, args.password, args.site, args.properties.name);
 	});
 	
 	

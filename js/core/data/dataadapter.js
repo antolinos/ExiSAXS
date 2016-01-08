@@ -53,6 +53,7 @@ DataAdapter.prototype.get = function(url){
 			  url: this.getUrl(connections[0], url),
 			  type: 'get',
 			  async : this.async,
+			  dataType 	: 'json',
 			  statusCode: {
 		            400 : function(){
 		                BUI.showError('400 : bad request');
