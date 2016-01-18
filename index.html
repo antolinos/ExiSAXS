@@ -60,6 +60,83 @@
 
 <div class="highlight highlight-source-shell"><pre>grunt dev</pre></div>
 
+<h2>
+<a id="how-to-configure-exi-" class="anchor" href="#how-to-configure-exi-" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to configure EXI </h2>
+
+<p>In order to configure EXI some modifications should be done on config.js that it may be found on:</p>
+
+<ul>
+<li>/saxs/config.js </li>
+<li>/mx/config.js</li>
+</ul>
+
+<p>It allows to use different configuration for different techniques.</p>
+
+<p>This is the format of the file is JSON</p>
+
+<div class="highlight highlight-source-json"><pre>{
+   <span class="pl-s"><span class="pl-pds">"</span>detectors<span class="pl-pds">"</span></span> : {
+
+    <span class="pl-s"><span class="pl-pds">"</span>Pilatus3_2M<span class="pl-pds">"</span></span> : {
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSize<span class="pl-pds">"</span></span>: {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">1475</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">1679</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>sensitiveArea<span class="pl-pds">"</span></span> : {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">253.7</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">288.8</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSizeHorizontal<span class="pl-pds">"</span></span> : <span class="pl-c1">0.172</span>,
+                <span class="pl-s"><span class="pl-pds">"</span>img<span class="pl-pds">"</span></span> : <span class="pl-s"><span class="pl-pds">"</span>https://www.dectris.com/tl_files/root/products/PILATUS%20S%20Serie/Systems/PILATUS3_S_2M.png<span class="pl-pds">"</span></span>
+
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>Pilatus_6M_F<span class="pl-pds">"</span></span> : {
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSize<span class="pl-pds">"</span></span>: {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">2463</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">2527</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>sensitiveArea<span class="pl-pds">"</span></span> : {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">423.6</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">434.6</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSizeHorizontal<span class="pl-pds">"</span></span> : <span class="pl-c1">0.172</span>,
+                <span class="pl-s"><span class="pl-pds">"</span>img<span class="pl-pds">"</span></span> : <span class="pl-s"><span class="pl-pds">"</span>https://www.dectris.com/tl_files/root/products/PILATUS%20S%20Serie/Systems/PILATUS3_S_6M.png<span class="pl-pds">"</span></span>
+
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>Pilatus3_6M<span class="pl-pds">"</span></span> : {
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSize<span class="pl-pds">"</span></span>: {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">2463</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">2527</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>sensitiveArea<span class="pl-pds">"</span></span> : {
+                        <span class="pl-s"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span> : <span class="pl-c1">423.6</span>,
+                        <span class="pl-s"><span class="pl-pds">"</span>y<span class="pl-pds">"</span></span> : <span class="pl-c1">434.6</span>
+                },
+                <span class="pl-s"><span class="pl-pds">"</span>pixelSize<span class="pl-pds">"</span></span><span class="pl-ii">Horizontal</span> : <span class="pl-c1">0.172</span>,
+                <span class="pl-s"><span class="pl-pds">"</span>img<span class="pl-pds">"</span></span> : <span class="pl-s"><span class="pl-pds">"</span>https://www.dectris.com/tl_files/root/products/PILATUS%20S%20Serie/Systems/PILATUS3_S_6M.png<span class="pl-pds">"</span></span>
+
+    }
+
+
+
+   },
+   <span class="pl-s"><span class="pl-pds">"</span>sites<span class="pl-pds">"</span></span>:[
+      {
+         <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>ESRF<span class="pl-pds">"</span></span>,
+         <span class="pl-s"><span class="pl-pds">"</span>url<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>https://wwws.esrf.fr/ispyb/ispyb-ws/rest<span class="pl-pds">"</span></span>,
+         <span class="pl-s"><span class="pl-pds">"</span>exiUrl<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>http://pc593.embl.fr:8080/extispyb-ws/rest<span class="pl-pds">"</span></span>,
+         <span class="pl-s"><span class="pl-pds">"</span>beamlines<span class="pl-pds">"</span></span>:{
+            <span class="pl-s"><span class="pl-pds">"</span>SAXS<span class="pl-pds">"</span></span>:[
+               <span class="pl-s"><span class="pl-pds">"</span>BM29<span class="pl-pds">"</span></span>
+            ],
+            <span class="pl-s"><span class="pl-pds">"</span>MX<span class="pl-pds">"</span></span>:[
+               <span class="pl-s"><span class="pl-pds">"</span>ID23-1<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID29<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID30B<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID23-2<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID30A-3<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID30A-1<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID30A-2<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>BM14U<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>BM30A<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID14-1<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID14-2<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID14-3<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>ID14-4<span class="pl-pds">"</span></span>
+            ]
+         }
+      }
+]
+}</pre></div>
+
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/antolinos/EXI">Exi</a> is maintained by <a href="https://github.com/antolinos">antolinos</a>.</span>
 
